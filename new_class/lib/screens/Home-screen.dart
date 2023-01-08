@@ -45,19 +45,19 @@ class _HomeState extends State<Home> {
                     ,)),
                 IconButton(
                     onPressed: () {
-                      if (products[index]["isfavourite"] == false) {
+                      if (products[index]["iscart"] == false) {
                         cart.add(products[index]);
                         setState(() {
-                          products[index]["isfavourite"] = true;
+                          products[index]["iscart"] = true;
                         });
                       } else {
                         cart.remove(products[index]);
                         setState(() {
-                          products[index]["isfavourite"] = false;
+                          products[index]["iscart"] = false;
                         });
                       }
                     },
-                    icon: Icon(Icons.shopping_bag_outlined, color: products[index]["isfavourite"] == true ? Colors.red :Colors.grey)),
+                    icon: Icon(Icons.shopping_bag_outlined, color: products[index]["iscart"] == true ? Colors.red :Colors.grey)),
               ],
             ),
           );
